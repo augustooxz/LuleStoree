@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhone 14 Pro Max Apple (128GB) Roxo-profundo, Tela de 6,7", 5G e Câmera de 48MP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <header><a href="index.html">
+          <h1>LuleStore</h1>
+      </a></header>
+        <a href="carrinho.html"><img src="https://img.icons8.com/pastel-glyph/64/FFFFFF/paper-bag--v2.png" alt="carrinho"></a>
+        </div>
+    <div id="buy-page">
+        <div>
+            <img id="bannerImg" class="image" src="images/iphone/iphone14-img01-removebg-preview.png" alt="iphone-img">
+        </div>
+        <div class="buy-area">
+            <h3 class="prodtitle">iPhone 14 Pro Max Apple (128GB) Roxo-profundo, Tela de 6,7", 5G e Câmera de 48MP</h3>
+            <p>De <del>R$ 10.499,00</del></p>
+            <div>
+
+                <strong class="price">R$7.299,00</strong><br>
+               qtd: <input type="number" value="1" min="1" max="999" id="produto01">
+
+               <button class="comprar" type="button" id="adicionar1" id="produto1" onclick="AddCarrinho('iPhone 14 Pro Max Apple (128GB) Roxo-profundo', document.getElementById('produto01').value, '7299.00', 1)"> Comprar </button>
+
+             </div>
+        </div>
+    </div>
+    <object data="footer.html" type="" width="100%" height="100%"></object>
+
+    <script>
+        function AddCarrinho(produto, qtd, valor, posicao)
+        {
+          localStorage.setItem("produto" + posicao, produto);
+          localStorage.setItem("qtd" + posicao, qtd);
+          valor = valor * qtd;
+          localStorage.setItem("valor" + posicao, valor);
+          alert("Produto adicionado ao carrinho!");
+        }
+      </script>
+</body>
+</html>

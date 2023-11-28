@@ -1,0 +1,65 @@
+<meta charset="UTF-8">
+<link rel="stylesheet" href="style.css">
+<style>
+	.limpar{
+		background-color: red;
+		color: white;
+		border: 5;
+		width: 100px;
+	}
+	.limpar:hover{
+		background-color: rgb(170, 0, 0);
+	}
+	.finalizar{
+		margin-top: 10px;
+		background-color: rgb(3, 197, 3);
+		color: white;
+		width: 100px;
+	}
+	.finalizar:hover{
+		background-color: rgb(1, 143, 1);
+	}
+
+</style>
+<div class="header">
+	<header><a href="index.html">
+		<h1>LuleStore</h1>
+	</a></header>
+	<a href="carrinho.html"><img src="https://img.icons8.com/pastel-glyph/64/FFFFFF/paper-bag--v2.png" alt="carrinho"></a>
+	</div>
+
+<div id="itens"> </div>
+<div>Total: R$ <span id="total"></span> </div>
+
+<script>
+ var total = 0; // variável que retorna o total dos produtos que estão na LocalStorage.
+ var i = 0;     // variável que irá percorrer as posições
+ var valor = 0; // variável que irá receber o preço do produto convertido em Float.
+ 
+ for(i=1; i<=99; i++) // verifica até 99 produtos registrados na localStorage
+ {
+	 var prod = localStorage.getItem("produto" + i + ""); // verifica se há recheio nesta posição. 
+	 if(prod != null) 
+	 {	
+		 // exibe os dados da lista dentro da div itens
+		 document.getElementById("itens").innerHTML += localStorage.getItem("qtd" + i) + " x ";
+		 document.getElementById("itens").innerHTML += localStorage.getItem("produto" + i);
+		 document.getElementById("itens").innerHTML += " ";
+		 document.getElementById("itens").innerHTML += "R$: " + localStorage.getItem("valor" + i) + "<hr>";
+		 
+		 // calcula o total dos recheios
+		 valor = parseFloat(localStorage.getItem("valor" + i)); // valor convertido com o parseFloat()
+		 total = (total + valor); // arredonda para 2 casas decimais com o .toFixed(2)
+	 }
+	 
+ } 
+ // exibe o total dos recheios
+ document.getElementById("total").innerHTML = total.toFixed(2); 
+</script>
+
+<button class="limpar" type="button" onclick=" localStorage.clear(); location.reload();"> Limpar carrinho </button>
+<a href="formulario-checkout.html">
+	<button class="finalizar">
+		Finalizar compra
+	</button>
+</a>

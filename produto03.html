@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asus ROG Phone 7 512GB 5G Octa Core Snapdragon 8 Gen2 16GB Ram Tela 6,78" CâmTripla+Self 32MP Branco</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="header">
+    <header><a href="index.html">
+      <h1>LuleStore</h1>
+  </a></header>
+    <a href="carrinho.html"><img src="https://img.icons8.com/pastel-glyph/64/FFFFFF/paper-bag--v2.png" alt="carrinho"></a>
+    </div>
+    <div id="buy-page">
+        <div>
+            <img class="image" src="images/rog/rogimg02-removebg-preview.png" alt="rog7-img">
+        </div>
+        <div class="buy-area">
+            <h3 class="prodtitle">Asus ROG Phone 7 512GB 5G Octa Core Snapdragon 8 Gen2 16GB Ram Tela 6,78" CâmTripla+Self 32MP Branco</h3>
+            <p>De <del>R$ 11.999,00 </del></p>
+            <strong class="price">R$9.839,00</strong><br>
+            qtd: <input type="number" value="1" min="1" max="999" id="produto03">
+            <button class="comprar" type="button" id="adicionar1" id="produto1" onclick="AddCarrinho('Asus ROG Phone 7 512GB 5G Octa Core Snapdragon 8 Gen2 16GB Ram Tela 6,78 CâmTripla+Self 32MP Branco', document.getElementById('produto03').value, '9839.00', 3)"> Comprar </button>
+          </div>
+          <p>
+            <a href="carrinho.html"> Ver Carrinho de compras </a>
+          </p>  
+     </a>
+     </div>
+ </div>
+ <object data="footer.html" type="" width="100%" height="100%"></object>
+ <script>
+     function AddCarrinho(produto, qtd, valor, posicao)
+     {
+       localStorage.setItem("produto" + posicao, produto);
+       localStorage.setItem("qtd" + posicao, qtd);
+       valor = valor * qtd;
+       localStorage.setItem("valor" + posicao, valor);
+       alert("Produto adicionado ao carrinho!");
+     }
+   </script>
+</body>
+</html>
